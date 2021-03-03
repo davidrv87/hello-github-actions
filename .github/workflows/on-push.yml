@@ -1,0 +1,8 @@
+name: On push workflow
+on: push
+jobs:
+  build:
+    name: Run on push
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.ref }}
