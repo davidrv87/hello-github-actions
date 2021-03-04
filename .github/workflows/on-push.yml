@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Run common steps first
         id: common-steps
-        uses: .github/actions/common-steps
+        uses: ./.github/actions/common-steps
         with:
           wf_ref: ${{ github.ref }}
           wf_event_name: ${{ github.event_name }}
