@@ -8,5 +8,11 @@ jobs:
     name: Run on push
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.ref }}
-      - run: echo ${{ github.event_name }}
+      - name: Run common steps first
+        id: common-steps
+        uses: .github/actions/common-steps@v1
+        with:
+          wf_ref: ${{ github.ref }}
+          wf_event_name: ${{ github.event_name }}
+      - name: Step on push workflow
+        run: echo "I am push workflow"
