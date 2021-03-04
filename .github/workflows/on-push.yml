@@ -8,6 +8,7 @@ jobs:
     name: Run on push
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Run common steps first
         id: common-steps
         uses: ./.github/actions/common-steps
