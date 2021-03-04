@@ -1,0 +1,16 @@
+name: 'Print some stuff'
+description: 'Run some echo commands that are common to some workflows'
+inputs:
+  wf_ref:
+    description: 'Either the branch or tag'
+    required: true
+  wf_event_name:
+    description: 'The name of the event'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: echo ${{ inputs.wf_ref }}.
+      shell: bash
+    - run: echo ${{ inputs.wf_event_name }}
+      shell: bash
